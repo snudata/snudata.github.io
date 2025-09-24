@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://padlet.com; connect-src 'self' https://padlet.com; object-src 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, private">
+    <meta http-equiv="Pragma" content="no-cache">
     <title>AI Native Campus - 제1회 서울대학교 생성형AI 활용 경진대회</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'><path d='M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z'/></svg>" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -245,8 +255,9 @@
         
         .prize-card h4 {
             color: #0F0F70;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
+            line-height: 1.2;
         }
 
         .prize-card h5 {
@@ -261,6 +272,10 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 1rem;
+        }
+
+        .prize-card .amount[data-en] {
+            font-size: 1.8rem;
         }
         
         .prize-card p {
@@ -409,9 +424,9 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 data-ko='"AI Native Campus"' data-en='"AI Native Campus"'>"AI Native Campus" </h1>
+            <h1 data-ko='AI Native Campus' data-en='AI Native Campus'>AI Native Campus </h1>
             <p data-ko="서울대학교 제1회 생성형AI 활용 경진대회에 오신 것을 환영합니다." data-en="Welcome to Seoul National University's 1st Generative AI Competition.">서울대학교 제1회 생성형AI 활용 경진대회에 오신 것을 환영합니다.</p>
-            <a href="#register" class="cta-button" data-ko="지금 기획서 접수" data-en="Submit Proposal Now">지금 기획서 접수</a>
+            <a href="#register" class="cta-button" data-ko="10월 20일 기획서 접수 링크 오픈" data-en="Proposal Submission Link Opens October 20">지금 기획서 접수</a>
         </div>
     </section>
 
@@ -553,7 +568,7 @@
                 <h3 data-ko="📝 신청 방법" data-en="📝 How to Apply">📝 신청 방법</h3>
                 <p data-ko="아래 링크를 통해 온라인으로 신청하실 수 있습니다." data-en="You can apply online through the link below.">아래 링크를 통해 온라인으로 신청하실 수 있습니다.</p>
                 <br>
-                <a href="#" class="cta-button" style="background: #0F0F70; color: #fff;" data-ko="참가신청 바로가기" data-en="Apply Now">참가신청 바로가기</a>
+                <a href="#" class="cta-button" style="background: #0F0F70; color: #fff;" data-ko="10월 20일 기획서 접수 링크 오픈" data-en="Proposal Submission Link Opens October 20">10월 20일 기획서 접수 링크 오픈</a>
             </div>
         </div>
     </section>
@@ -630,7 +645,7 @@
                     궁금한 점이 있으시면 아래 패들릿에 질문을 남겨주세요. 실시간으로 답변드리겠습니다.
                 </p>
                 <!-- 패들릿 임베드 코드 -->
-                <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/bgkpxzb5sznkkaaf" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Padlet으로 만듦"></div></a></div></div>
+                <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/mj3jt7c3ziw77797" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p><div style="display:flex;align-items:center;justify-content:end;margin:0;height:28px"><a href="https://padlet.com?ref=embed" style="display:block;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank"><div style="display:flex;align-items:center;"><img src="https://padlet.net/embeds/made_with_padlet_2022.png" width="114" height="28" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none" alt="Padlet으로 만듦"></div></a></div></div>
             </div>
         </div>
     </section>
