@@ -23,6 +23,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-padding-top: 100px;
+        }
+
         body {
             font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.6;
@@ -357,6 +361,38 @@
             color: #555;
         }
 
+        .finalists {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .finalist-card {
+            background: #fff;
+            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #0F0F70;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .finalist-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 15, 112, 0.2);
+        }
+
+        .finalist-card h4 {
+            color: #0F0F70;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -621,6 +657,7 @@
                 <li><a href="#home" data-ko="홈" data-en="Home">홈</a></li>
                 <li><a href="#about" data-ko="대회소개" data-en="About">대회소개</a></li>
                 <li><a href="#schedule" data-ko="일정" data-en="Schedule">일정</a></li>
+                <li><a href="#finalists" data-ko="본선 진출팀" data-en="Finalists">본선 진출팀</a></li>
                 <li><a href="#prizes" data-ko="시상" data-en="Prizes">시상</a></li>
                 <li><a href="#register" data-ko="참가신청" data-en="Register">참가신청</a></li>
                 <li><a href="#faq" data-ko="FAQ" data-en="FAQ">FAQ</a></li>
@@ -633,10 +670,10 @@
         <div class="hero-content">
             <h1 data-ko='AI Native Campus' data-en='AI Native Campus'>AI Native Campus </h1>
             <p data-ko="서울대학교 제1회 생성형AI 활용 경진대회에 오신 것을 환영합니다." data-en="Welcome to Seoul National University's 1st Generative AI Competition.">서울대학교 제1회 생성형AI 활용 경진대회에 오신 것을 환영합니다.</p>
-            <a href="https://extra.snu.ac.kr/ptfol/imng/icmpNsbjtPgm/findIcmpNsbjtPgmInfo.do?currentPageNo=&encSddpbSeq=e2eccb815777f6adb435cbb11582db8b" class="cta-button" data-ko="본선 진출자 발표 결과 확인하러 가기" data-en="Check finalist results" target="_blank">본선 진출자 발표 결과 확인하러 가기</a>
             <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8; line-height: 1.4;">
                 <p data-ko="주관: 서울대학교 정보화본부 &nbsp;&nbsp;&nbsp; 협력기업: 네이버클라우드, 마인드로직" data-en="Organizer: Office of Information Systems & Technology &nbsp;&nbsp;&nbsp; Partners: Naver Cloud Platform, MindLogic">주관: 서울대학교 정보화본부 &nbsp;&nbsp;&nbsp; 협력기업: 네이버클라우드, 마인드로직</p>
             </div>
+            <a href="#finalists" class="cta-button" data-ko="본선진출팀 확인하러 가기" data-en="Check Finalist Teams" style="margin-top: 1.5rem;">본선진출팀 확인하러 가기</a>
         </div>
     </section>
 
@@ -685,7 +722,7 @@
                         구현 방안, 예상 결과물 등을 기재하여 <br> 온라인으로 <a href='#register' style='color: #0F0F70; text-decoration: underline; font-weight: bold;'>참가</a>" data-en="Submit online with details on theme, current issues, proposed ideas,<br>
                         implementation plan, expected outcomes, etc.<br>
                         <a href='#register' style='color: #0F0F70; text-decoration: underline; font-weight: bold;'>Participate</a>">주제, 문제 현안, 아이디어 제안 내용<br>
-                        구현 방안, 예상 결과물 등을 기재하여 <br> 온라인으로 <a href="https://extra.snu.ac.kr/ptfol/imng/icmpNsbjtPgm/findIcmpNsbjtPgmInfo.do?currentPageNo=&encSddpbSeq=e2eccb815777f6adb435cbb11582db8b" style="color: #0F0F70; text-decoration: underline; font-weight: bold;" target="_blank">참가</a></p>
+                        구현 방안, 예상 결과물 등을 기재하여 <br> 온라인으로 <a href="#register" style="color: #0F0F70; text-decoration: underline; font-weight: bold;">참가</a></p>
                 </div>
             </div>
         </div>
@@ -741,6 +778,48 @@
         </div>
     </section>
 
+    <section id="finalists" class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 data-ko="본선 진출팀" data-en="Finalist Teams">본선 진출팀</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: #0F0F70; font-weight: 500; margin-top: 1rem; margin-bottom: 2rem;" data-ko="본선 진출을 축하합니다! 🎉" data-en="Congratulations on making it to the finals! 🎉">본선 진출을 축하합니다! 🎉</p>
+            <div class="finalists">
+                <div class="finalist-card">
+                    <h4>RE!</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>SNUPathAI</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>CourseMa</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>알파타</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>SAGE</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>Day_0</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>숭고</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>샤알비AI</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>스누지니어스</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>상생상성</h4>
+                </div>
+                <div class="finalist-card">
+                    <h4>GK700</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="prizes" class="section">
         <div class="container">
             <h2 data-ko="시상 내역" data-en="Awards">시상 내역</h2>
@@ -782,9 +861,7 @@
             <h2 data-ko="참가 신청" data-en="Registration">참가 신청</h2>
             <div class="info-card">
                 <h3 data-ko="📝 신청 방법" data-en="📝 How to Apply">📝 신청 방법</h3>
-                <p data-ko="아래 링크를 통해 온라인으로 신청하실 수 있습니다." data-en="You can apply online through the link below.">아래 링크를 통해 온라인으로 신청하실 수 있습니다.</p>
-                <br>
-                <a href="https://extra.snu.ac.kr/ptfol/imng/icmpNsbjtPgm/findIcmpNsbjtPgmInfo.do?currentPageNo=&encSddpbSeq=e2eccb815777f6adb435cbb11582db8b" class="cta-button" style="background: #0F0F70; color: #fff;" data-ko="본선 진출자 발표 결과 확인하러 가기" data-en="Check finalist results" target="_blank">본선 진출자 발표 결과 확인하러 가기</a>
+                <p data-ko="본선 진출팀 발표 결과는 상단의 <a href='#finalists' style='color: #0F0F70; text-decoration: underline; font-weight: bold;'>본선 진출팀</a> 섹션에서 확인하실 수 있습니다." data-en="Finalist teams are announced in the <a href='#finalists' style='color: #0F0F70; text-decoration: underline; font-weight: bold;'>Finalist Teams</a> section above.">본선 진출팀 발표 결과는 상단의 <a href="#finalists" style="color: #0F0F70; text-decoration: underline; font-weight: bold;">본선 진출팀</a> 섹션에서 확인하실 수 있습니다.</p>
             </div>
         </div>
     </section>
@@ -928,7 +1005,12 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
                 }
