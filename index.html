@@ -13,7 +13,7 @@
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=()">
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, private">
     <meta http-equiv="Pragma" content="no-cache">
-    <title>제1회 서울대학교 생성형 AI 경진대회</title>
+    <title>서울대학교 생성형 AI 경진대회</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'><path d='M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z'/></svg>" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -182,6 +182,15 @@
             color: #0F0F70;
         }
 
+        .nav-links a.archive-nav-link {
+            color: #999;
+            font-weight: 400;
+        }
+
+        .nav-links a.archive-nav-link:hover {
+            color: #666;
+        }
+
         .hero {
             background: url('./img/경진대회 배경.png') center center no-repeat;
             background-size: cover;
@@ -282,6 +291,96 @@
             max-width: 800px;
         }
 
+        #application .container {
+            max-width: 1400px;
+        }
+
+        .schedule-notice {
+            margin: -2rem 0 2.5rem;
+            color: #777;
+            text-align: center;
+        }
+
+        .schedule-flow {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr);
+            align-items: stretch;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .schedule-card {
+            width: 100%;
+            min-width: 0;
+            padding: 1.5rem 1rem;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .schedule-step {
+            display: flex;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 1rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #0F0F70;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .schedule-card h3 {
+            margin-bottom: 0.75rem;
+            color: #0F0F70;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .schedule-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            white-space: nowrap;
+        }
+
+        .schedule-status {
+            display: inline-block;
+            margin-top: 0.2rem;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        .schedule-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b93a1;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1300px) {
+            .schedule-flow {
+                display: flex;
+                max-width: 700px;
+                margin: 0 auto;
+                flex-direction: column;
+            }
+
+            .schedule-card {
+                width: 100%;
+            }
+
+            .schedule-arrow {
+                min-height: 24px;
+                transform: rotate(90deg);
+            }
+        }
+
         .timeline {
             list-style: none;
         }
@@ -356,7 +455,23 @@
         .prize-card .amount[data-en] {
             font-size: 1.8rem;
         }
-        
+
+        .prize-card .special-award-details {
+            font-size: 1.45rem;
+            line-height: 1.5;
+        }
+
+        .prize-card .special-award-details[data-en] {
+            font-size: 1.25rem;
+        }
+
+        .awards-note {
+            margin-top: 2rem;
+            color: #555;
+            text-align: center;
+            font-weight: 500;
+        }
+
         .prize-card p {
             color: #555;
         }
@@ -444,7 +559,7 @@
 
         .faq-answer.active {
             padding: 1.5rem;
-            max-height: 200px;
+            max-height: 500px;
         }
 
         .faq-answer p {
@@ -455,6 +570,126 @@
 
         .faq-item.active .faq-toggle {
             transform: rotate(45deg);
+        }
+
+        .padlet-wrapper {
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            background: #f5f6f8;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .padlet-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .padlet-fallback {
+            margin-top: 1rem;
+            text-align: center;
+            color: #666;
+        }
+
+        .padlet-fallback a {
+            color: #0F0F70;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .padlet-wrapper {
+                height: 600px;
+            }
+        }
+
+        /* 이전 대회 아카이브 */
+        #schedule,
+        #prizes {
+            display: none;
+        }
+
+        .archive-content #schedule,
+        .archive-content #prizes {
+            display: block;
+        }
+
+        .archive-toggle {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 0;
+            background: transparent;
+            color: #333;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .archive-panel {
+            padding: 2rem;
+            background: #f5f6f8;
+            border: 1px solid #d8dde5;
+            border-radius: 16px;
+        }
+
+        .archive-badge {
+            display: table;
+            margin: 0 auto 0.5rem;
+            padding: 0.3rem 0.75rem;
+            background: #fff;
+            border: 1px solid #cfd4dc;
+            border-radius: 999px;
+            color: #6b7280;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .archive-toggle-title {
+            color: #777;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .archive-toggle-icon {
+            color: #0F0F70;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .archive-content {
+            margin-top: 1.5rem;
+            padding: 0 1.5rem;
+            background: #fff;
+            border: 1px solid #e1e4e8;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .archive-description {
+            margin: 0.25rem 0 0;
+            color: #6b7280;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .archive-panel {
+                padding: 1.25rem;
+            }
+
+            .archive-content {
+                padding: 0 0.75rem;
+            }
+
+            .archive-toggle-title {
+                font-size: 1.3rem;
+            }
         }
 
         #register .info-card {
@@ -644,7 +879,7 @@
         <nav class="header-container">
             <div class="logo">
                 <img src="./img/1.png" alt="SNU Logo" class="snu-logo">
-                <span data-ko="제1회 서울대학교 생성형 AI 경진대회" data-en="1st Seoul National University Generative AI Competition">제1회 서울대학교 생성형 AI 경진대회</span>
+                <span data-ko="서울대학교 생성형 AI 경진대회" data-en="Seoul National University Generative AI Competition">서울대학교 생성형 AI 경진대회</span>
                 <div class="language-toggle">
                     <button id="lang-ko" class="active" onclick="changeLanguage('ko')">KO</button>
                     <button id="lang-en" onclick="changeLanguage('en')">EN</button>
@@ -656,10 +891,10 @@
             <ul class="nav-links">
                 <li><a href="#home" data-ko="홈" data-en="Home">홈</a></li>
                 <li><a href="#about" data-ko="대회소개" data-en="About">대회소개</a></li>
-                <li><a href="#schedule" data-ko="일정" data-en="Schedule">일정</a></li>
-                <li><a href="#prizes" data-ko="최종 수상자" data-en="Award Winners">최종 수상자</a></li>
+                <li><a href="#application" data-ko="일정" data-en="Schedule">일정</a></li>
                 <li><a href="#faq" data-ko="FAQ" data-en="FAQ">FAQ</a></li>
-                <li><a href="#contact" data-ko="문의" data-en="Contact">문의</a></li>
+                <li><a href="#qna" data-ko="Q&amp;A 및 공지사항" data-en="Q&amp;A and Announcements">Q&amp;A 및 공지사항</a></li>
+                <li><a href="#archive" class="archive-nav-link" data-ko="이전 대회" data-en="Previous Competition">이전 대회</a></li>
             </ul>
         </nav>
     </header>
@@ -667,11 +902,11 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 data-ko='AI Native Campus' data-en='AI Native Campus'>AI Native Campus </h1>
-            <p data-ko="서울대학교 제1회 생성형AI 경진대회에 오신 것을 환영합니다." data-en="Welcome to Seoul National University's 1st Generative AI Competition.">서울대학교 제1회 생성형AI 경진대회에 오신 것을 환영합니다.</p>
+            <p data-ko="서울대학교 생성형 AI 경진대회에 오신 것을 환영합니다." data-en="Welcome to Seoul National University's Generative AI Competition.">서울대학교 생성형 AI 경진대회에 오신 것을 환영합니다.</p>
             <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8; line-height: 1.4;">
-                <p data-ko="주최: 서울대학교 정보화본부 &nbsp;&nbsp;&nbsp; 협력기업: 네이버클라우드, 마인드로직" data-en="Organizer: Office of Information Systems & Technology &nbsp;&nbsp;&nbsp; Partners: Naver Cloud Platform, MindLogic">주최: 서울대학교 정보화본부 &nbsp;&nbsp;&nbsp; 협력기업: 네이버클라우드, 마인드로직</p>
+                <p data-ko="주최: 서울대학교&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;주관: 서울대학교 정보화본부<br>협력기업 : OpenAI Korea, 네이버클라우드 주식회사, 마인드로직 주식회사" data-en="Host: Seoul National University&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Organizer: Office of Information Systems &amp; Technology<br>Partner Companies: OpenAI Korea, NAVER Cloud Corp., Mindlogic Inc.">주최: 서울대학교&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;주관: 서울대학교 정보화본부<br>협력기업 : OpenAI Korea, 네이버클라우드 주식회사, 마인드로직 주식회사</p>
             </div>
-            <a href="#prizes" class="cta-button" data-ko="최종 수상자 확인하러 가기" data-en="Check Award Winners" style="margin-top: 1.5rem;">최종 수상자 확인하러 가기</a>
+            <a href="#application" class="cta-button" data-ko="참가접수: 2026년 9월 예정" data-en="Registration: Scheduled for September 2026" style="margin-top: 1.5rem;">참가접수: 2026년 9월 예정</a>
         </div>
     </section>
 
@@ -685,42 +920,105 @@
                 </div>
                 <div class="info-card">
                     <h3 data-ko="👥 참가 대상" data-en="👥 Participants">👥 참가 대상</h3>
-                    <p data-ko="서울대 교직원 및 학생<br>(팀당 1~4인, 개인 참가 가능)" data-en="SNU faculty and students (max 4 members per team)">서울대 교직원 및 학생<br>(팀당 1~4인, 개인 참가 가능)</p>
+                    <p data-ko="서울대학교 재학/휴학 중인 학생 및 교직원<br>※ 팀당 1~4인(개인 참가 가능)" data-en="Students currently enrolled at or on leave from Seoul National University, and SNU faculty and staff<br>※ Teams of 1–4 members (individual participation allowed)">서울대학교 재학/휴학 중인 학생 및 교직원<br>※ 팀당 1~4인(개인 참가 가능)</p>
                 </div>
                 <div class="info-card">
-                    <h3 data-ko="⏰ 기획서 접수 기간" data-en="⏰ Proposal Submission Period">⏰ 기획서 접수 기간</h3>
-                    <p data-ko="2025. 10. 20.(월) ~ 10. 24.(금)" data-en="October 20 (Mon) ~ October 24 (Fri), 2025">2025. 10. 20.(월) ~ 10. 24.(금)</p>
+                    <h3 data-ko="⏰ 참가 신청기간" data-en="⏰ Application Period">⏰ 참가 신청기간</h3>
+                    <p data-ko="2026년 9월 예정" data-en="Scheduled for September 2026">2026년 9월 예정</p>
                 </div>
                 <div class="info-card">
                     <h3 data-ko="📍주제" data-en="📍Theme">📍주제</h3>
-                    <p data-ko="생성형 AI 기술을 활용하여 서울대학교 현안(교육, 연구, 행정)을 해결하고 발전에 기여할 수 있는 자유주제" data-en="Free theme utilizing generative AI technology to solve SNU's current issues (education, research, administration) and contribute to development">생생성형 AI 기술을 활용하여 서울대학교 현안(교육, 연구, 행정)을 해결하고 발전에 기여할 수 있는 자유주제</p>
+                    <p data-ko="생성형 AI 기술을 활용하여 서울대학교 교육, 연구, 행정 발전에 기여할 수 있는 서비스" data-en="A service that uses generative AI technology to contribute to the advancement of education, research, and administration at Seoul National University">생성형 AI 기술을 활용하여 서울대학교 교육, 연구, 행정 발전에 기여할 수 있는 서비스</p>
                 </div>
                 <div class="info-card">
                     <h3 data-ko="💻 진행 절차" data-en="💻 Process">💻 진행 절차</h3>
                     <p data-ko="1. 참가신청(기획서 접수)<br>
                     2. 기획서 평가 → 본선 진출팀 선발<br>
-                    3. 선발팀은 AI 서비스 개발<br>
-                    ※ 협력기업 멘토링 하에 진행<br>
-                    4. 최종 발표<br>
+                    3. 본선 진출팀 AI 서비스 개발<br>
+                    4. 최종 발표 (서비스 시연 포함)<br>
                     5. 평가 및 시상" data-en="1. Registration (Proposal Submission)<br>
                     2. Proposal Evaluation → Finalist Selection<br>
-                    3. Selected teams develop AI services<br>
-                    ※ With corporate mentoring<br>
-                    4. Final Presentation<br>
-                    5. Evaluation and Awards">1. 기획서 접수<br>
+                    3. Finalist Teams Develop AI Services<br>
+                    4. Final Presentation (Including Service Demonstration)<br>
+                    5. Evaluation and Awards">1. 참가신청(기획서 접수)<br>
                     2. 기획서 평가 → 본선 진출팀 선발<br>
-                    3. 선발팀은 AI 서비스 개발<br>
-                    ※ 협력기업 멘토링 하에 진행<br>
-                    4. 최종 발표<br>
+                    3. 본선 진출팀 AI 서비스 개발<br>
+                    4. 최종 발표 (서비스 시연 포함)<br>
                     5. 평가 및 시상</p>
                 </div>
                 <div class="info-card">
-                    <h3 data-ko="📊 제출방법/참가방법" data-en="📊 Submission/How to Participate">📊 제출방법/참가방법</h3>
-                    <p data-ko="주제, 문제 현안, 아이디어 제안 내용<br>
-                        구현 방안, 예상 결과물 등을 기재하여 <br> 온라인으로 참가" data-en="Submit online with details on theme, current issues, proposed ideas,<br>
-                        implementation plan, expected outcomes, etc.<br>
-                        Participate">주제, 문제 현안, 아이디어 제안 내용<br>
-                        구현 방안, 예상 결과물 등을 기재하여 <br> 온라인으로 참가</p>
+                    <h3 data-ko="📊 참가방법" data-en="📊 How to Participate">📊 참가방법</h3>
+                    <p data-ko="온라인 접수(SNU비교과)<br>참가신청서(<a href='#qna'>공지사항 참조</a>)" data-en="Online application (SNU Extracurricular System)<br>Application form (<a href='#qna'>see announcements</a>)">온라인 접수(SNU비교과)<br>참가신청서(<a href="#qna">공지사항 참조</a>)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="section">
+        <div class="container">
+            <h2 data-ko="우수작 시상" data-en="Awards for Outstanding Entries">우수작 시상</h2>
+            <div class="prizes">
+                <div class="prize-card">
+                    <h4 data-ko="🥇 대상" data-en="🥇 Grand Prize">🥇 대상</h4>
+                    <h5 data-ko="1팀" data-en="1 Team">1팀</h5>
+                    <div class="amount" data-ko="500만원" data-en="5,000,000 KRW">500만원</div>
+                    <p data-ko="상금 + 총장상" data-en="Prize + President Award">상금 + 총장상</p>
+                </div>
+                <div class="prize-card">
+                    <h4 data-ko="🥈 최우수상" data-en="🥈 Excellence Award">🥈 최우수상</h4>
+                    <h5 data-ko="2팀" data-en="2 Teams">2팀</h5>
+                    <div class="amount" data-ko="300만원" data-en="3,000,000 KRW">300만원</div>
+                    <p data-ko="상금 + 총장상" data-en="Prize + President Award">상금 + 총장상</p>
+                </div>
+                <div class="prize-card">
+                    <h4 data-ko="🥉 우수상" data-en="🥉 Merit Award">🥉 우수상</h4>
+                    <h5 data-ko="4팀" data-en="4 Teams">4팀</h5>
+                    <div class="amount" data-ko="200만원" data-en="2,000,000 KRW">200만원</div>
+                    <p data-ko="상금 + 총장상" data-en="Prize + President Award">상금 + 총장상</p>
+                </div>
+                <div class="prize-card">
+                    <h4 data-ko="🏆 특별상" data-en="🏆 Special Award">🏆 특별상</h4>
+                    <h5 data-ko="3팀" data-en="3 Teams">3팀</h5>
+                    <div class="amount special-award-details" data-ko="협력기업 대표상 및<br>상금 또는 상품" data-en="Corporate Partner Award and<br>Cash Prize or Gift">협력기업 대표상 및<br>상금 또는 상품</div>
+                </div>
+            </div>
+            <p class="awards-note" data-ko="※ 운영 상황 등에 따라 변경될 수 있습니다.<br>※ 참가자 전원 비교과활동 인증서 발급" data-en="※ Details may change depending on operational circumstances.<br>※ An extracurricular activity certificate will be issued to all participants.">※ 운영 상황 등에 따라 변경될 수 있습니다.<br>※ 참가자 전원 비교과활동 인증서 발급</p>
+        </div>
+    </section>
+
+    <section id="application" class="section">
+        <div class="container">
+            <h2 data-ko="일정" data-en="Schedule">일정</h2>
+            <p class="schedule-notice" data-ko="※ 대회 진행에 따라 변경될 수 있으며, 서비스 개발 기간 중에는 온/오프라인 자문을 위한 일정이 추가될 수 있습니다." data-en="※ The schedule may change depending on the progress of the competition, and additional online or offline consultation sessions may be scheduled during the service development period.">※ 대회 진행에 따라 변경될 수 있으며, 서비스 개발 기간 중에는 온/오프라인 자문을 위한 일정이 추가될 수 있습니다.</p>
+            <div class="schedule-flow">
+                <div class="schedule-card">
+                    <div class="schedule-step">1</div>
+                    <h3 data-ko="참가신청<br>(기획서 접수)" data-en="Registration<br>(Proposal Submission)">참가신청<br>(기획서 접수)</h3>
+                    <p data-ko="2026. 9. 1.(화) ~ 9. 13.(일)<br><span class='schedule-status'>(예정)</span>" data-en="September 1 (Tue)–13 (Sun), 2026<br><span class='schedule-status'>(Scheduled)</span>">2026. 9. 1.(화) ~ 9. 13.(일)<br><span class="schedule-status">(예정)</span></p>
+                </div>
+                <div class="schedule-arrow" aria-hidden="true">→</div>
+                <div class="schedule-card">
+                    <div class="schedule-step">2</div>
+                    <h3 data-ko="본선 진출팀 발표" data-en="Finalist Announcement">본선 진출팀 발표</h3>
+                    <p data-ko="2026. 9월 말<br><span class='schedule-status'>(예정)</span>" data-en="Late September 2026<br><span class='schedule-status'>(Scheduled)</span>">2026. 9월 말<br><span class="schedule-status">(예정)</span></p>
+                </div>
+                <div class="schedule-arrow" aria-hidden="true">→</div>
+                <div class="schedule-card">
+                    <div class="schedule-step">3</div>
+                    <h3 data-ko="서비스 개발<br>(본선 진출팀)" data-en="Service Development<br>(Finalist Teams)">서비스 개발<br>(본선 진출팀)</h3>
+                    <p data-ko="2026. 10. ~ 11. 20.(금)<br><span class='schedule-status'>(예정)</span>" data-en="October–November 20 (Fri), 2026<br><span class='schedule-status'>(Scheduled)</span>">2026. 10. ~ 11. 20.(금)<br><span class="schedule-status">(예정)</span></p>
+                </div>
+                <div class="schedule-arrow" aria-hidden="true">→</div>
+                <div class="schedule-card">
+                    <div class="schedule-step">4</div>
+                    <h3 data-ko="본선 개최<br>(시연 및 발표)" data-en="Final Event<br>(Demonstration and Presentation)">본선 개최<br>(시연 및 발표)</h3>
+                    <p data-ko="2026. 11월 말<br><span class='schedule-status'>(예정)</span>" data-en="Late November 2026<br><span class='schedule-status'>(Scheduled)</span>">2026. 11월 말<br><span class="schedule-status">(예정)</span></p>
+                </div>
+                <div class="schedule-arrow" aria-hidden="true">→</div>
+                <div class="schedule-card">
+                    <div class="schedule-step">5</div>
+                    <h3 data-ko="최종수상자 발표 및 시상식" data-en="Final Winners Announcement and Awards Ceremony">최종수상자 발표 및 시상식</h3>
+                    <p data-ko="2026. 12월 중" data-en="December 2026">2026. 12월 중</p>
                 </div>
             </div>
         </div>
@@ -859,10 +1157,6 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem; color: #555;">
-                <p data-ko="*  본선 참가팀 (최종 발표 참여자 전원): 팀당 30만원 상당의 개발지원비 및 현업 전문가 멘토링을 제공합니다" data-en="* Finalist teams (all final presentation participants): Development support funds worth 300,000 KRW per team and mentoring by industry experts will be provided">*  본선 참가팀 (최종 발표 참여자 전원): 팀당 30만원 상당의 개발지원비 및 현업 전문가 멘토링을 제공합니다</p>
-                <p data-ko="경진대회 참가자 전원: 비교과 활동 인증서가 제공됩니다" data-en="All competition participants: Extracurricular activity certificates will be provided">경진대회 참가자 전원: 비교과 활동 인증서가 제공됩니다</p>
-            </div>
         </div>
     </section>
 
@@ -876,7 +1170,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p data-ko="접수는 마이스누 > 비교과 시스템에서 가능합니다.(<a href='https://extra.snu.ac.kr/ptfol/pgm/view.do?dataSeq=PGM012001209' target='_blank' style='color: #0F0F70; text-decoration: underline; font-weight: bold;'>링크</a>)<br><br>모든 참가자는 팀을 구성하더라도 개인정보동의서 및 참가자 유의사항 동의서를 제출하여야 하며, 기획서는 팀당 1인(팀장)이 제출합니다." data-en="Registration is available through MySNU > Extracurricular System (<a href='https://extra.snu.ac.kr/ptfol/pgm/view.do?dataSeq=PGM012001209' target='_blank' style='color: #0F0F70; text-decoration: underline; font-weight: bold;'>link</a>).<br><br>All participants must submit personal information consent and participant agreement forms, even if they form a team. The proposal should be submitted by one person per team (team leader).">접수는 마이스누 > 비교과 시스템에서 가능합니다.(<a href="https://extra.snu.ac.kr/ptfol/pgm/view.do?dataSeq=PGM012001209" target="_blank" style="color: #0F0F70; text-decoration: underline; font-weight: bold;">링크</a>)<br><br>모든 참가자는 팀을 구성하더라도 개인정보동의서 및 참가자 유의사항 동의서를 제출하여야 하며, 기획서는 팀당 1인(팀장)이 제출합니다.</p>
+                        <p data-ko="접수는 마이스누 > 비교과 시스템에서 가능합니다. (2026년 9월 예정)<br><br>모든 참가자는 팀을 구성하더라도 개인정보동의서 및 참가자 유의사항 동의서를 제출하여야 하며, 기획서는 팀당 1인(팀장)이 제출합니다." data-en="Registration will be available through MySNU > Extracurricular System. (Scheduled for September 2026)<br><br>All participants must submit personal information consent and participant agreement forms, even if they form a team. The proposal should be submitted by one person per team (team leader).">접수는 마이스누 > 비교과 시스템에서 가능합니다. (2026년 9월 예정)<br><br>모든 참가자는 팀을 구성하더라도 개인정보동의서 및 참가자 유의사항 동의서를 제출하여야 하며, 기획서는 팀당 1인(팀장)이 제출합니다.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -890,25 +1184,11 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3 data-ko="Q. 어떤 AI 도구를 사용할 수 있나요?" data-en="Q. What AI tools can I use?">Q. 어떤 AI 도구를 사용할 수 있나요?</h3>
+                        <h3 data-ko="Q. 개발도구에 제한이 있나요?" data-en="Q. Are there any restrictions on development tools?">Q. 개발도구에 제한이 있나요?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p data-ko="스누AIChat, 협력기관이 제공하는 마인드로직 인포미, 네이버 클로버 스튜디오는 무상으로 이용이 가능합니다.
-                        이 외에도 ChatGPT, Gemini, Claude, Cursor 등 다양한 생성형 AI 도구를 자유롭게 활용하실 수 있으며 팀당 30만원 개발지원비 한도에서 지원됩니다." 
-                        data-en="YSNU AI Chat, MindLogic InforMe provided by sponsoring companies, and Naver CLOVA Studio are available for free use.
-                        In addition, various generative AI tools such as ChatGPT, Gemini, Claude, and Cursor can be freely utilized, and development support of up to 300,000 KRW per team is available within the support budget.">
-                        스누AIChat, 협력기관이 제공하는 마인드로직 인포미, 네이버 클로버 스튜디오는 무상으로 이용이 가능합니다.
-                        이 외에도 ChatGPT, Gemini, Claude, Cursor 등 다양한 생성형 AI 도구를 자유롭게 활용하실 수 있으며 팀당 30만원 개발지원비 한도에서 지원됩니다.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3 data-ko="Q. 개발 경험이 없어도 참가할 수 있나요?" data-en="Q. Can I participate without development experience?">Q. 개발 경험이 없어도 참가할 수 있나요?</h3>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p data-ko="네, 가능합니다. AI 도구를 활용한 아이디어 구현이 주목적이므로 개발 경험보다는 창의적 아이디어가 중요합니다." data-en="Yes, you can. The main goal is to implement ideas using AI tools, so creative ideas are more important than development experience.">네, 가능합니다. AI 도구를 활용한 아이디어 구현이 주목적이므로 개발 경험보다는 창의적 아이디어가 중요합니다.</p>
+                        <p data-ko="개발도구에는 제한이 없습니다.<br>서울대학교에서는 ChatGPT(CODEX), 스누AI챗, 네이버클라우드플랫폼(서버,GPU 등의 서비스) 을 지원하며, 그 외 본선 진출팀이 별도로 사용한 유료 서비스에 대해서는 팀당 30만원 한도로 지원해 드립니다." data-en="There are no restrictions on development tools.<br>Seoul National University provides support for ChatGPT (Codex), SNU AI Chat, and Naver Cloud Platform services such as servers and GPUs. Paid services separately used by finalist teams will be supported up to KRW 300,000 per team.">개발도구에는 제한이 없습니다.<br>서울대학교에서는 ChatGPT(CODEX), 스누AI챗, 네이버클라우드플랫폼(서버,GPU 등의 서비스) 을 지원하며, 그 외 본선 진출팀이 별도로 사용한 유료 서비스에 대해서는 팀당 30만원 한도로 지원해 드립니다.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -922,11 +1202,11 @@
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3 data-ko="Q. 결과물은 어떤 형태로 제출하나요?" data-en="Q. In what format should I submit the results?">Q. 결과물은 어떤 형태로 제출하나요?</h3>
+                        <h3 data-ko="Q. 본선 진출 시 결과물은 어떤 형태로 제출하나요?" data-en="Q. What form should the final deliverable take if selected as a finalist?">Q. 본선 진출 시 결과물은 어떤 형태로 제출하나요?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p data-ko="웹 서비스, 모바일 앱, 데모 영상 등 다양한 형태로 제출 가능합니다. 창의적인 결과물을 환영합니다." data-en="You can submit in various formats such as web services, mobile apps, demo videos, etc. Creative results are welcome.">웹 서비스, 모바일 앱, 데모 영상 등 다양한 형태로 제출 가능합니다. 창의적인 결과물을 환영합니다.</p>
+                        <p data-ko="실제 작동하는 웹 서비스 및 모바일 앱 등을 준비해 주셔야 합니다. (본선 발표 평가에서 시연)" data-en="You must prepare a working web service, mobile app, or similar deliverable for demonstration during the final presentation evaluation.">실제 작동하는 웹 서비스 및 모바일 앱 등을 준비해 주셔야 합니다. (본선 발표 평가에서 시연)</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -942,28 +1222,56 @@
         </div>
     </section>
 
+    <section id="qna" class="section">
+        <div class="container">
+            <h2 data-ko="Q&amp;A 및 공지사항" data-en="Q&amp;A and Announcements">Q&amp;A 및 공지사항</h2>
+            <div class="padlet-wrapper">
+                <iframe
+                    src="https://padlet.com/embed/wdbl0xsrxn4ys80u"
+                    title="AI Native Campus 2026 Q&amp;A Padlet"
+                    allow="camera; microphone; geolocation; display-capture; clipboard-write"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="padlet-fallback" data-ko="<a href='https://padlet.com/snudata/ai-2026-wdbl0xsrxn4ys80u' target='_blank' rel='noopener noreferrer'>Q&amp;A 및 공지사항 새 창에서 열기</a>" data-en="<a href='https://padlet.com/snudata/ai-2026-wdbl0xsrxn4ys80u' target='_blank' rel='noopener noreferrer'>Open Q&amp;A and Announcements in a new window</a>"><a href="https://padlet.com/snudata/ai-2026-wdbl0xsrxn4ys80u" target="_blank" rel="noopener noreferrer">Q&amp;A 및 공지사항 새 창에서 열기</a></p>
+        </div>
+    </section>
+
+    <section id="archive" class="section archive-section">
+        <div class="container">
+            <div class="archive-panel">
+                <div class="archive-badge">ARCHIVE · 2025</div>
+                <button type="button" class="archive-toggle" aria-expanded="false" aria-controls="archive-content">
+                    <span class="archive-toggle-title" data-ko="제1회 대회 개최내역" data-en="First Competition Archive">제1회 대회 개최내역</span>
+                    <span class="archive-toggle-icon" aria-hidden="true">＋</span>
+                </button>
+                <p class="archive-description" data-ko="아래 내용은 제1회 대회의 일정 및 수상 기록입니다." data-en="The information below contains the schedule and award records from the first competition.">아래 내용은 제1회 대회의 일정 및 수상 기록입니다.</p>
+                <div id="archive-content" class="archive-content" hidden></div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 data-ko="주최" data-en="Organizer">주최</h3>
-                    <p data-ko="서울대학교 정보화본부" data-en="Office of Information Systems & Technology">서울대학교 정보화본부</p>
+                    <h3 data-ko="주최·주관" data-en="Host · Organizer">주최·주관</h3>
+                    <p data-ko="(주최) 서울대학교<br>(주관) 서울대학교 정보화본부" data-en="(Host) Seoul National University<br>(Organizer) Office of Information Systems &amp; Technology">(주최) 서울대학교<br>(주관) 서울대학교 정보화본부</p>
                 </div>
                 <div class="footer-section">
-                    <h3 data-ko="협력기관" data-en="Sponsors">협력기관</h3>
-                    <p data-ko="네이버클라우드<br>마인드로직" data-en="Naver Cloud Platform<br>MindLogic">네이버클라우드<br>마인드로직</p>
+                    <h3 data-ko="협력기업" data-en="Partner Companies">협력기업</h3>
+                    <p data-ko="OpenAI Korea<br>네이버클라우드 주식회사<br>마인드로직 주식회사" data-en="OpenAI Korea<br>NAVER Cloud Corp.<br>Mindlogic Inc.">OpenAI Korea<br>네이버클라우드 주식회사<br>마인드로직 주식회사</p>
                 </div>
                 <div class="footer-section">
-                    <h3 data-ko="문의사항" data-en="Contact">문의사항</h3>
+                    <h3 data-ko="문의처" data-en="Contact">문의처</h3>
                     <ul class="contact-info">
                         <li>📧 snudata@snu.ac.kr</li>
-                        <li>📞 02-880-8282</li>
                         <li data-ko="🏫 서울대학교 정보화본부(102동)" data-en="🏫 Office of Information Systems & Technology (Building 102)">🏫 서울대학교 정보화본부(102동)</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-ko="&copy; 2025 AI Native Campus - 서울대학교 제1회 생성형AI 경진대회. All rights reserved." data-en="&copy; 2025 AI Native Campus - Seoul National University 1st Generative AI Competition. All rights reserved.">&copy; 2025 AI Native Campus - 서울대학교 제1회 생성형AI 경진대회. All rights reserved.</p>
+                <p data-ko="&copy; 2025 AI Native Campus - 서울대학교 생성형 AI 경진대회. All rights reserved." data-en="&copy; 2025 AI Native Campus - Seoul National University Generative AI Competition. All rights reserved.">&copy; 2025 AI Native Campus - 서울대학교 생성형 AI 경진대회. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1005,6 +1313,22 @@
                     });
                 }
             });
+        });
+
+        // Move the previous competition sections into the collapsible archive.
+        const archiveContent = document.getElementById('archive-content');
+        const scheduleSection = document.getElementById('schedule');
+        const prizesSection = document.getElementById('prizes');
+        const archiveToggle = document.querySelector('.archive-toggle');
+        const archiveToggleIcon = document.querySelector('.archive-toggle-icon');
+
+        archiveContent.append(scheduleSection, prizesSection);
+
+        archiveToggle.addEventListener('click', function() {
+            const willExpand = this.getAttribute('aria-expanded') !== 'true';
+            this.setAttribute('aria-expanded', String(willExpand));
+            archiveContent.hidden = !willExpand;
+            archiveToggleIcon.textContent = willExpand ? '−' : '＋';
         });
 
         // FAQ Accordion functionality
